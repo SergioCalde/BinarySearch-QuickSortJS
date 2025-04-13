@@ -47,3 +47,26 @@ function binarySearch(list, search){
     }
     return -1 
 }
+
+let list_selection = [874,-10,1000,5,80,33,21,-32];
+
+function selectionSort(list_selection) {
+    for (let i = 0; i < list_selection.length; i++) {
+        let min = i;
+        for (let j = i + 1; j < list_selection.length; j++) {
+            if (list_selection[j] < list_selection[min]) {
+                min = j;
+            }   
+        }
+        if (min !== i) {
+            let temp = list_selection[i];
+            list_selection[i] = list_selection[min];
+            list_selection[min] = temp;
+            
+        }
+    }
+}    
+
+selectionSort(list_selection);
+
+console.log(list_selection);
